@@ -118,18 +118,24 @@ class PollService {
 
   //Done
   static async addOption(pollId, text) {
-    return await Poll.findByIdAndUpdate(
-      pollId,
-      {
-        $push: {
-          options: {
-            text: text,
-          },
-        },
-      },
-      { new: true }
-    );
-  }
+ 
+  const poll = await Poll.findById(pollId);
+
+  if (!poll) {
+    throw new Error("Poll not found");
+  }
+
+  if (poll.isLocked) {
+    throw new Error("Poll is locked. Cannot add option.");
+  }
+
+  
+  poll.options.push({ text });
+  await poll.save();
+
+  return poll;
+}
+
   //Done
   static async removeOption(pollId, optionId) {
     return await Poll.findByIdAndUpdate(

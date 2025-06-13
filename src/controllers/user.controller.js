@@ -29,7 +29,7 @@ export class UserController {
       age,
     });
 
-    res.status(201).json({ message: "Tạo người dùng thành công", user });
+    return res.status(201).json({ message: "Tạo người dùng thành công", user });
   }
 
   static async putUser(req, res) {
