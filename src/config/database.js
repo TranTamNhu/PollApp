@@ -3,7 +3,7 @@ import Vote from "../models/vote.model.js"
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("Connect Success");
     await Vote.createIndexes();
     console.log("Vote indexes ensured");
