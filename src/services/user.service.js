@@ -25,6 +25,10 @@ export class UserService {
   static async getUserInfo(userId) {
     return await User.findById(userId); 
   }
+    static sayHello() {
+    console.log("Hello World");
+  }
+
 }
 
 export default UserService;
