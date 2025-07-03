@@ -28,6 +28,9 @@ export class UserService {
     static sayHello() {
     console.log("Hello World");
   }
+   static sayBye() {
+    console.log("Goodbye");
+  }
 
 }
 
