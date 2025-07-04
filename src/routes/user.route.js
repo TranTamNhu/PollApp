@@ -11,9 +11,9 @@ router.get("/users", asyncHandler(UserController.getAllUsers));
 router.get("/users/hello", (req, res) => {
   res.send("Hello World");
 });
-// router.get("/users/bye", (req, res) => {
-//   res.send("Goodbye");
-// });
+router.get("/users/bye", (req, res) => {
+  res.send("Goodbye");
+});
 
 router.get("/users/hi", (req, res) => {
   res.send("Hi");
