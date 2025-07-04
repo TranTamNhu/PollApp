@@ -15,6 +15,10 @@ router.get("/users/hello", (req, res) => {
 //   res.send("Goodbye");
 // });
 
+router.get("/users/hi", (req, res) => {
+  res.send("Hi");
+});
+
 router.get("/users/me", checkAuth, asyncHandler(UserController.getUserInfo)); // nằm trên /users/:id vì nó động nên vô tình nó trùng với /me nên /me không chạy
 
 router.get("/users/:id", asyncHandler(UserController.getUserById));
