@@ -14,6 +14,9 @@ router.get("/users/hello", (req, res) => {
 router.get("/users/bye", (req, res) => {
   res.send("Goodbye");
 });
+router.get("/users/goodnight", (req, res) => {
+  res.send("Goodnight");
+});
 
 router.get("/users/hi", (req, res) => {
   res.send("Hi");
