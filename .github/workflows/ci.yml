@@ -51,5 +51,5 @@ jobs:
             docker run -d \
               --name app \
               --env-file /home/ubuntu/PollApp/.env \
-              -p 80:3000 \
+              -p 3000:3000 \
               ${{ secrets.DOCKERHUB_USERNAME }}/demoexpress:latest
